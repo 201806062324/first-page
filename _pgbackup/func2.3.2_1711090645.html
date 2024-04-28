@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="func1.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#" target="_pg_blank">软件可信性系统</a>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap user-info">
+                    <span class="text-white username">用户名</span>
+                    <a class="nav-link text-white" href="cover.html" target="_pg_blank">退出</a>
+                </li>
+            </ul>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>&nbsp;主页 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                        <polyline points="13 2 13 9 20 9"></polyline>
+                                    </svg>&nbsp;项目管理</a>
+                                <p class="indented"></p>
+                                <p class="indented">添加项目</p>
+                                <p class="indented">项目信息</p>
+                                <p class="indentedAndCur">权重计算</p> 
+                                <ul class="tab-menu">
+                                    <div class="tab indented">属性</div>
+                                    <p class="indented"></p>
+                                    <div class="tab indentedAndCur">子属性</div>
+                                    <p class="indented"></p>
+                                    <div class="tab indented">度量元</div>
+                                </ul>                                 
+                                <p class="indented"></p> 
+                                <p class="indented">可信性计算</p> 
+                                <p class="indented">评估结果</p> 
+                                <p class="indented">分析报告</p> 
+                                <a class="nav-link" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>&nbsp;权限管理</a> 
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 标签二内容 -->
+                        <div class="tab-content  active" id="content2">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">子属性权重计算</h1>
+                            </div>
+                            <div>
+                                <h2 class="h5" style="background-color: lightgray;">功能性子属性权重计算——输入判断矩阵</h2>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">功能性子属性</th>
+                                            <th scope="col">功能适合性</th>
+                                            <th scope="col">功能准确性</th>
+                                            <th scope="col">功能互操作性</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">功能适合性</th>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-2" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                        </tr>                                         
+                                        <tr>
+                                            <th scope="row">功能准确性</th>
+                                            <td>
+                                                <select id="cell-1-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-1-2" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">功能互操作性</th>
+                                            <td>
+                                                <select id="cell-2-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select id="cell-2-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h2 class="h5" style="background-color: lightgray;">可靠性子属性权重计算——输入判断矩阵</h2>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">可靠性子属性</th>
+                                            <th scope="col">可靠成熟性</th>
+                                            <th scope="col">可靠容错性</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">可靠成熟性</th>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td> </td>
+                                        </tr>                                         
+                                        <tr>
+                                            <th scope="row">可靠容错性</th>
+                                            <td>
+                                                <select id="cell-1-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+</tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h2 class="h5" style="background-color: lightgray;">安全性子属性权重计算——输入判断矩阵</h2>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">安全性子属性</th>
+                                            <th scope="col">安全保密性</th>
+                                            <th scope="col">安全完整性</th>
+                                            <th scope="col">安全防危性</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">安全保密性</th>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-2" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                        </tr>                                         
+                                        <tr>
+                                            <th scope="row">安全完整性</th>
+                                            <td>
+                                                <select id="cell-1-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-1-2" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">安全防危性</th>
+                                            <td>
+                                                <select id="cell-2-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select id="cell-2-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h2 class="h5" style="background-color: lightgray;">实时性子属性权重计算——输入判断矩阵</h2>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">实时性子属性</th>
+                                            <th scope="col">实时及时性</th>
+                                            <th scope="col">实时稳定性</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">实时及时性</th>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td>
+                                                <select id="cell-0-1" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td> </td>
+                                        </tr>                                         
+                                        <tr>
+                                            <th scope="row">实时稳定性</th>
+                                            <td>
+                                                <select id="cell-1-0" onchange="updateDiagonal(this)">
+                                                    <option value="" disabled selected>--</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="1/2">1/2</option>
+                                                    <option value="1/3">1/3</option>
+                                                    <option value="1/4">1/4</option>
+                                                    <option value="1/5">1/5</option>
+                                                    <option value="1/6">1/6</option>
+                                                    <option value="1/7">1/7</option>
+                                                    <option value="1/8">1/8</option>
+                                                    <option value="1/9">1/9</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="disableSelect" ype="text" placeholder="1" disabled>
+                                            </td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+</tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="parent-container">
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary threebutton1" nclick="submitTable()">提交</button>
+                                    <button type="button" class="btn btn-primary threebutton1">重置 功能没写</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="content3">
+                            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                                <h1 class="h2">度量元权重计算</h1>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+        <script>
+        /* globals Chart:false, feather:false */
+            //tab切换部分代码
+				// 获取所有标签元素
+				const tabs = document.querySelectorAll('.tab');
+				// 获取所有容器内容元素
+				const tabContents = document.querySelectorAll('.tab-content');
+
+				// 为每个标签添加点击事件监听器
+				tabs.forEach((tab, index) => {
+				tab.addEventListener('click', () => {
+					// 切换活动标签的样式
+					tabs.forEach((tab) => tab.classList.remove('active'));
+					tab.classList.add('active');
+
+					// 切换相应的容器内容
+					tabContents.forEach((content) => content.classList.remove('active'));
+					tabContents[index].classList.add('active');
+				});
+				});
+
+
+			/////////////////////////////////////
+			//标签1部分代码
+				//默认--，选择后不可选--
+				function handleChange(select) {
+					if (select.value === "") {
+						select.selectedIndex = -1;
+					}
+				}
+				
+
+				//表格自动改变值
+			    function updateDiagonal(select) {
+					const cellId = select.id.split("-");
+					const row = parseInt(cellId[1]);
+					const col = parseInt(cellId[2]);
+					const diagonalCell = document.getElementById(`cell-${col}-${row}`);
+
+					if (select.value.length === 1) {
+						diagonalCell.value = "1/" + select.value; // x转化为"1/x"
+					} else if (select.value.startsWith("1/")) {
+						diagonalCell.value = select.value.substring(2); // "1/x"转化为 "x"
+					}
+
+				}
+	//提交表格
+    function submitTable() {
+      const tableData = [];
+      const tableRows = document.getElementsByTagName("tr");
+
+      for (let i = 1; i < tableRows.length; i++) {
+        const row = tableRows[i];
+        const rowData = [];
+
+      for (let j = 1; j < row.cells.length; j++) {
+          const cell = row.cells[j];
+          const select = cell.getElementsByTagName("select")[0];
+          rowData.push(select.value);
+      }
+
+        tableData.push(rowData);
+      }
+
+      // 发送表格数据到服务器
+    	axios.post('/submit', { tableData })
+			.then(response => {
+			console.log(response.data);
+			})
+			.catch(error => {
+			console.error(error);
+		});
+  }
+
+  		//重置 表格
+		function resetSelectOptions() {
+			const selectElements = document.querySelectorAll('select'); // 获取所有的 <select> 元素
+			selectElements.forEach((select) => {
+			select.value = '--'; // 将选择索引设置为--
+			});
+		}
+////////////////////////////////////////////////
+        </script>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="func1.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#" target="_pg_blank">软件可信性系统</a>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap user-info">
+                    <span class="text-white username">用户名</span>
+                    <a class="nav-link text-white" href="cover.html" target="_pg_blank">退出</a>
+                </li>
+            </ul>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>&nbsp;主页 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                        <polyline points="13 2 13 9 20 9"></polyline>
+                                    </svg>&nbsp;项目管理</a>
+                                <p class="indented"></p>
+                                <p class="indentedAndCur">添加项目</p>
+                                <p class="indented">项目信息</p>
+                                <p class="indented">权重计算</p>
+                                <p class="indented">可行性计算</p>
+                                <p class="indented">评估结果</p>
+                                <p class="indented">分析报告</p>
+                                <a class="nav-link" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>&nbsp;权限管理</a>
+                            </li>
+                        </ul>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> <a class="link-secondary" href="#" aria-label="Add a new report"> </a> </h6>
+                    </div>
+                </nav>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">添加项目</h1>
+                    </div>
+                    <div class="container">
+                        <div class="input-group">
+                            <label for="projectName">项目名称:</label>
+                            <input type="text" class="form-control" id="projectName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="projectCode">项目代号:</label>
+                            <input type="text" class="form-control" id="projectCode" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="projTeamLeader">项目组长:</label>
+                            <input type="text" class="form-control" id="projTeamLeader">
+                        </div>
+                        <div class="input-group">
+                            <label for="projTestPrincipal">测试负责人:</label>
+                            <input type="text" class="form-control" id="projTestPrincipal">
+                        </div>
+                        <div class="input-group"> 
+                            <label for="projSecurClass">项目密级:</label>                             
+                            <select id="projSecurClass" class="form-select" aria-label="Default select example"> 
+                                <option selected> 请选择</option>                                 
+                                <option value="1">One</option>                                 
+                                <option value="2">Two</option>                                 
+                            </select>                             
+                        </div>
+                        <div class="input-group">
+                            <label for="SoftwareOverview" class="form-label">软件概述:</label>                             
+                            <textarea class="form-control" id="SoftwareOverview" rows="4"></textarea> 
+                        </div>
+                        <div class="input-group">其他信息待添加</div>
+                        <button type="button" class="btn btn-primary" nclick="submit()">确认提交</button>
+                    </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script>
+        /* globals Chart:false, feather:false */
+            
+        </script>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="func1.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#" target="_pg_blank">软件可信性系统</a>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap user-info">
+                    <span class="text-white username">用户名</span>
+                    <a class="nav-link text-white" href="cover.html" target="_pg_blank">退出</a>
+                </li>
+            </ul>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                    </svg>&nbsp;主页 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                        <polyline points="13 2 13 9 20 9"></polyline>
+                                    </svg>&nbsp;项目管理</a>
+                                <p class="indented"></p>
+                                <p class="indented">添加项目</p>
+                                <p class="indented">项目信息</p>
+                                <p class="indented">属性权重计算</p>
+                                <p class="indented">子属性权重计算</p>
+                                <p class="indented">分阶段权重计算</p>
+                                <p class="indented">分级评估结果</p>
+                                <p class="indented">统计</p>
+                                <p class="indented">报告</p>
+                                <a class="nav-link" href="#" target="_pg_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>&nbsp;权限管理</a>
+                            </li>
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                        </ul>
+                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> <a class="link-secondary" href="#" aria-label="Add a new report"> </a> </h6>
+                        <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                            <li class="nav-item">
+</li>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class=""></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class=""></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">项目管理</h1>
+                        <button class="btn btn-secondary" nclick="addProjects()">添加项目</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="projectTable" class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>项目编号</th>
+                                    <th>项目名称</th>
+                                    <th>项目创建者</th>
+                                    <th>项目统计</th>
+                                    <th>项目报告</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 这里将通过 JavaScript 动态插入行 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+        <script>
+        /* globals Chart:false, feather:false */
+            function addProjects(){
+
+			}
+			
+			function updateTable(data) {
+                var tableBody = document.querySelector('#projectTable tbody');
+                
+                // 清空表格内容
+                tableBody.innerHTML = '';
+
+                // 根据后端返回的数据，动态插入相应数量的行
+                for (var i = 0; i < data.length; i++) {
+                    var row = document.createElement('tr');
+                    
+                    // 创建单元格并添加到行中
+                    var cell1 = document.createElement('td');
+                    cell1.textContent = data[i].value1;
+                    row.appendChild(cell1);
+
+                    var cell2 = document.createElement('td');
+                    cell2.textContent = data[i].value2;
+                    row.appendChild(cell2);
+
+                    var cell3 = document.createElement('td');
+                    cell3.textContent = data[i].value3;
+                    row.appendChild(cell3);
+                    // 添加更多单元格 ...
+
+                    // 将行添加到表格的 tbody 中
+                    tableBody.appendChild(row);
+                }
+                }
+
+                // 模拟从后端接收到的数据
+                var responseData = [
+                { value1: '行1值1', value2: '行1值2',value3: '行1值3',value4: '行1值4',value5: '行1值5' },
+                { value1: '行2值1', value2: '行2值2',value3: '行2值3',value4: '行2值4',value5: '行2值5' },
+                { value1: '行3值1', value2: '行3值2',value3: '行3值3',value4: '行3值4',value5: '行3值5' }
+                ];
+
+                // 更新表格
+                updateTable(responseData);
+        
+        </script>
+    </body>
+</html>
